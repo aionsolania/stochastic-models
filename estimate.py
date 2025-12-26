@@ -12,3 +12,8 @@ def convergence_error(estimates, true_value):
     Compute absolute deviation from true parameter.
     """
     return [abs(e - true_value) for e in estimates]
+def scaled_error(errors, sizes):
+    """
+    Scale estimation error by sample size.
+    """
+    return [e * (n ** 0.5) for e, n in zip(errors, sizes)]
